@@ -1,9 +1,11 @@
-ID <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-SEX <- c("F", "M", "F", "M", "F", "F", "F", "M", "F")
+library(readxl)
+library(descr)
 
-dataframe_ex <- data.frame(ID, SEX)
+forest_example_data <- read_excel("D:/download/forest_example_data.xls")
 
+colnames(forest_example_data) <- c("name", "city", "gubun", "area",
+                                   "number", "stay", "city_new",
+                                   "code", "codename")
 
-dataframe_ex
+stem(forest_example_data$number, scale = 2)
 
-str(dataframe_ex)
